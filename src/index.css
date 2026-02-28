@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap');
+
+/* 
+  To use the FC Iconic font from your local files:
+  1. Extract the zip file.
+  2. Create a 'fonts' folder inside the 'public' folder of your project.
+  3. Copy the FC Iconic font files (e.g., .ttf or .woff2) into 'public/fonts/'.
+  4. Uncomment and update the @font-face rules below with the correct file names.
+*/
+
+/*
+@font-face {
+  font-family: 'FC Iconic';
+  src: url('/fonts/FCIconic-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FC Iconic';
+  src: url('/fonts/FCIconic-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FC Iconic';
+  src: url('/fonts/FCIconic-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+*/
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "FC Iconic", "Prompt", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply bg-white text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+  
+  .editorial-title {
+    @apply font-serif italic font-black leading-[0.9] tracking-tighter;
+  }
+  
+  .btn-premium {
+    @apply relative overflow-hidden px-8 py-4 rounded-2xl font-bold transition-all duration-500 active:scale-95;
+  }
+}
+
+@layer utilities {
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .thin-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+  }
+  .thin-scrollbar::-webkit-scrollbar {
+    height: 4px;
+  }
+  .thin-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .thin-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 20px;
+  }
+}
